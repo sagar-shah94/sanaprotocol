@@ -1,0 +1,353 @@
+
+<!DOCTYPE html>
+<html ng-app="sanaApp">
+<head>
+<title>Sana Protocol Builder</title>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="/js/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<script src="/js/angular.min.js"></script>
+	<script src="/js/angular-resource.js"></script>
+	<script src="/js/login.js"></script>
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Clinico Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-mobile-apps -->
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/mystyle.css" rel="stylesheet" type="text/css" media="all" />
+<style type="text/css">
+.principal
+{
+  width: 170px;
+  height: 170px;
+  background-color:black;
+  border-radius: 170px;
+  padding: 30px;
+}
+.principal_petit
+{
+  height: 170px;
+  background-color: white;
+  border-radius: 170px;
+  -webkit-transition:all 0.2s ease-in;
+  -moz-transition:all 0.2s ease-in;
+  -ms-transition:all 0.2s ease-in;
+  -o-transition:all 0.2s ease-in;
+  transition:all 0.2s ease-in;
+}
+.principal_petit:hover
+{
+  -webkit-transform: scale(1.1);
+  -webkit-transition:all 0.2s ease-in;
+  -moz-transform: scale(1.1);
+  -moz-transition:all 0.2s ease-in;
+  -ms-transform: scale(1.1);
+  -ms-transition:all 0.2s ease-in;
+  -o-transform: scale(1.1);
+  -o-transition:all 0.2s ease-in;
+  transform: scale(1.1);
+  transition:all 0.2s ease-in;
+}
+.principal_img
+{
+  -webkit-transition:all 0.2s ease-in;
+  -moz-transition:all 0.2s ease-in;
+  -ms-transition:all 0.2s ease-in;
+  -o-transition:all 0.2s ease-in;
+  transition:all 0.2s ease-in;
+}
+.principal_img:hover
+{
+  -webkit-transform: scale(0.7);
+  -webkit-transition:all 0.2s ease-in;
+  -moz-transform: scale(0.7);
+  -moz-transition:all 0.2s ease-in;
+  -ms-transform: scale(0.7);
+  -ms-transition:all 0.2s ease-in;
+  -o-transform: scale(0.7);
+  -o-transition:all 0.2s ease-in;
+  transform: scale(0.7);
+  transition:all 0.2s ease-in;
+}
+</style>
+<!-- js -->
+<script src="js/jquery-1.11.1.min.js"></script>
+<!-- //js -->
+<!-- start-smoth-scrolling -->
+<script type="text/javascript" src="js/move-top.js"></script>
+<script type="text/javascript" src="js/easing.js"></script>
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
+<!-- start-smoth-scrolling -->
+<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Cinzel:400,700,900' rel='stylesheet' type='text/css'>
+</head>
+	
+<body ng-controller="loginCtrl">
+<!-- header -->
+	<div class="header">
+		<div class="container">
+			<nav class="navbar navbar-default">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+				  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				  </button>
+					<div class="logo">
+						<a class="navbar-brand" href="/">SANA</a>
+					</div>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+					<nav class="cl-effect-5" id="cl-effect-5">
+						<ul class="nav navbar-nav">
+							<li><a href="/" class="active">Home</a></li>
+							<li><a href="/about"><span data-hover="About Us">About Us</span></a></li>
+							<li><a href="/mail"><span data-hover="Mail Us">Mail Us</span></a></li>
+
+						</ul>
+					</nav>
+				</div>
+				<!-- /.navbar-collapse -->
+			</nav>
+		</div>
+	</div>
+	 <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog" style="padding-top:10%;">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" style="color:red; opacity:1;">&times;</button>
+          <h4 class="modal-title"><center>Logo</center></h4>
+        </div>
+        <div class="modal-body">
+          <form name="frmlogin">
+        		<table align="center">
+        			<tr >
+        				<td >
+        					<label >Email</label>
+        				</td>
+        				<td >
+        					<input type="text" id="login_page" name="email" class="input-style" style="color: rgb(187, 187, 187);" ng-model="user.username">
+        				</td>
+        			</tr> 
+        			<tr >
+        				<td >
+        					<label >Password</label>
+        				</td>
+        				<td >
+        					<input type="password" id="password_page" name="password" value="" class="input-style" ng-model="user.password" >
+        				</td>
+        			</tr>
+        			
+        		</table>
+        			
+        			<center style="margin-top:5%;">
+    						<input type="submit" value="Sign In" class="btn btn-success" ng-click="login()">
+
+        			</center>
+        			<br>
+                   <table align="center">
+                   		<tr >
+
+    					 <td class="ext"  style="float:left;">
+    						<a href="#"  ng-click="redirectToRegister()">Register</a>
+    					</td> 
+    					<td class="ext" style="float:right;">
+    						<a data-dismiss="modal" data-toggle="modal" href="#myModal2">Forgot password?</a>
+    					</td>
+                    </tr>
+                   </table>
+        	</form>
+        </div>
+        <!-- <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div> -->
+      </div>
+      
+    </div>
+  </div>
+
+  <div class="modal fade" id="myModal1" role="dialog" style="padding-top:10%;">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" style="color:red; opacity:1;">&times;</button>
+          <h4 class="modal-title"><center>Sign Up</center></h4>
+        </div>
+        <div class="modal-body">
+          <form name="frmlogin" id="frmlogin" method="post" action="">
+        		<table align="center">
+        			<tr >
+        				<td >
+        					<label >Email</label>
+        				</td>
+        				<td >
+        					<input type="text" id="login_page" name="email" class="input-style" style="color: rgb(187, 187, 187);">
+        				</td>
+        			</tr> 
+        			<tr >
+        				<td >
+        					<label >Password</label>
+        				</td>
+        				<td >
+        					<input type="password" id="password_page" name="password" value="" class="input-style">
+        				</td>
+        			</tr>
+        			<tr >
+        				<td >
+        					<label >Profile created for</label>
+        				</td>
+        				<td >
+        					<select class="input-style">
+        						<option>Doctor</option>
+        						<option>Nurse</option>
+        						<option>Other</option>
+
+        					</select>
+        				</td>
+        			</tr>
+        			
+        		</table>
+        			
+        			<center style="margin-top:5%;">
+    						<input type="submit" value="Register" class="btn btn-success">
+
+        			</center>
+        			<br>
+                  	
+        	</form>
+        </div>
+        <!-- <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div> -->
+      </div>
+      
+    </div>
+  </div>
+
+
+    <div class="modal fade" id="myModal2" role="dialog" style="padding-top:10%;">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" style="color:red; opacity:1;">&times;</button>
+          <h4 class="modal-title"><center>Logo</center></h4>
+        </div>
+        <div class="modal-body">
+          <form name="frmlogin" id="frmlogin" method="post" action="">
+        		<table align="center">
+        			<tr >
+        				<td >
+        					<label >Email</label>
+        				</td>
+        				<td >
+        					<input type="text" id="login_page" name="email" class="input-style" style="color: rgb(187, 187, 187);">
+        				</td>
+        			</tr> 
+        			
+        				
+        		</table>
+        			<span class="forgot_pass" style="margin-left:17%;">
+        					Retrieve password via Registered Email
+        				</span>
+
+        			<center style="margin-top:5%;">
+    						<input type="submit" value="Send Password" class="btn btn-success">
+
+        			</center>
+        			<br>
+                  	
+        	</form>
+        </div>
+        <!-- <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div> -->
+      </div>
+      
+    </div>
+  </div>
+<!-- header -->
+<!-- body -->
+<div class="container" style="margin-top:2%;margin-bottom:2%">
+	<div class="row">
+      	<div class="principal_petit col-md-6 col-lg-6 col-sm-12">
+	        <div class="principal_img">
+	        <a href="registerNurse">
+	          <img src="images/nurse.png" border="0" align="center"/>
+	         </a>
+	        </div>
+    	</div>
+      	<div class="principal_petit col-md-6 col-lg-6 col-sm-12">
+	        <div class="principal_img">
+	        <a href="registerDoctor">
+	          <img src="images/doctor.png" border="0" align="center"/>
+	         </a>
+	        </div>
+    	</div>  
+    </div>
+</div>
+<!-- end body -->
+
+<!-- //companies -->
+<!-- footer -->
+  <div class="footer" style="margin-top:12%;">
+    <div class="container">
+      
+      <div class="">
+      <center>
+ <p>&copy 2016 sana. All rights reserved <!-- | Design by <a href="http://w3layouts.com">W3layouts -->.</a></p> 
+ </center>
+        
+        <script>
+          $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+          })
+        </script>
+      </div>
+    </div>
+  </div>
+<!-- //footer -->
+<!-- here stars scrolling icon -->
+  <script type="text/javascript">
+                  $(document).ready(function() {
+                    /*
+                    var defaults = {
+                        containerID: 'toTop', // fading element id
+                      containerHoverID: 'toTopHover', // fading element hover id
+                      scrollSpeed: 1200,
+                      easingType: 'linear' 
+                    };
+                    */
+                    
+                    $().UItoTop({ easingType: 'easeOutQuart' });
+                    
+                  });
+  </script>
+<!-- //here ends scrolling icon -->
+<!-- for bootstrap working -->
+  <script src="js/bootstrap.js"></script>
+<!-- //for bootstrap working -->
+</body>
+</html>

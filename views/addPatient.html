@@ -1,0 +1,82 @@
+<html ng-app="sanaApp">
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="/js/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<script src="/js/angular.min.js"></script>
+	<script src="/js/angular-resource.js"></script>
+</head>
+<body ng-controller="PatientCtrl">
+  <div class="col-lg-3"></div>
+  <div class="col-lg-6">
+    <form class="form-horizontal">
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="Name">Patient Name:</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="Name" placeholder="Enter Patient Name:" ng-model="patient.name">
+        </div>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="phone" placeholder="Enter Phone Name:" ng-model="patient.phone">
+        </div>        
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="Age">Age:</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="Age" placeholder="Patient Age:" ng-model="patient.age">
+        </div>
+      </div>      
+      <div class="form-group">
+      <label class="control-label col-sm-2" for="Name">Gender:</label>
+        <div class="col-sm-10 col-lg-10">
+        <div class="radio">
+          <label><input type="radio" name="gender" ng-model="patient.gender" value="male" />Male</label>
+        </div>
+        <div class="radio">
+          <label><input type="radio" name="gender" ng-model="patient.gender" value="female" />Female</label>
+        </div>
+        </div>
+      </div>
+      <div class="form-group"> 
+          <label class="control-label col-sm-2" for="Name">Symptoms:</label>      
+          <div class="col-sm-10 col-lg-10">
+            <select ng-model="patient.symptom" ng-options="symptoms.id as symptoms.name for symptoms in symptoms track by symptoms.id" class="form-control input-sm">
+            </select>
+          </div>
+      </div>
+      <div class="form-group" ng-repeat="questions in questions"> 
+         <label class="control-label col-sm-9 col-lg-9" for="Name">
+            {{questions.name}}
+          </label>
+        <div class="col-sm-3 col-lg-3">
+            <select ng-model="present" class="form-control input-sm" id="{{questions.id}}">
+              <option ng-repeat="choice in questions.choices" value="{{choice.id}}">{{choice.label}}</option>
+            </select>          
+        </div>
+      </div>      
+
+      <div class="form-group"> 
+        <div class="col-sm-offset-2 col-sm-10">
+          <button type="submit" class="btn btn-default" ng-click="sendPatientDetails()">Get Questions</button>
+          <button type="submit" class="btn btn-default" ng-click="getResults()">Get Result</button>
+          <button type="submit" class="btn btn-primary" ng-click="saveRecord()">Satisfied</button>
+          <button type="submit" class="btn btn-danger" ng-click="sendRequestToDoctor()">Request Doctor</button>
+        </div>
+      </div>
+      <div class="container table-responsive">
+        <table border="0" class="table table-hover" width="100%">
+          <tbody>   
+          <tr ng-repeat="element in diseases">
+            <td>{{element.name}}</td>
+            <td>{{element.prob}}</td>
+          </tr>
+        </tbody>
+        </table>
+      </div>              
+      </div>        
+      </div>      
+    </form>
+  </div>
+  <div class="col-lg-3"></div>
+  <script src="/js/addPatient.js"></script>
+</body>
+</html>

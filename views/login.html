@@ -1,0 +1,18 @@
+<html ng-app="sanaApp">
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="/js/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<script src="/js/angular.min.js"></script>
+	<script src="/js/angular-resource.js"></script>
+	<script src="/js/login.js"></script>
+</head>
+<body ng-controller="loginCtrl">
+	<form>
+		<input type="text" name="username" id="username" ng-model="user.username" />
+		<input type="password" name="password" id="password" ng-model="user.password" />
+		<input type="submit" name="submit" id="submit" value="Login" ng-click="login()" />
+	</form>
+	<h1>{{user}}</h1>
+</body>
+</html>

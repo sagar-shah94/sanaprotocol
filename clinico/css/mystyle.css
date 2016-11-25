@@ -1,0 +1,16 @@
+.input-style{
+	padding:1% 1% 1% 1%;
+	margin:3% 3% 3% 3%; 
+	border-radius:5px;
+}
+.ext{
+	   
+    font: normal 12px 'Roboto',sans-serif !important;
+    margin: 3px 7px 0 !important;
+    color: #00bcd5;
+}
+
+.forgot_pass {
+    font-size: 14px;
+    color: #b1b3b9;
+}

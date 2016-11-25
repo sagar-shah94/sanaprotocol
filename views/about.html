@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html ng-app="sanaApp">
+<head>
+<title>Sana Protocol Builder</title>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="/js/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<script src="/js/angular.min.js"></script>
+	<script src="/js/angular-resource.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" >
+
+	
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Clinico Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-mobile-apps -->
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/mystyle.css" rel="stylesheet" type="text/css" media="all" />
+<script src="js/jquery-1.11.1.min.js"></script>
+<!-- //js -->
+<!-- start-smoth-scrolling -->
+<script type="text/javascript" src="js/move-top.js"></script>
+<script type="text/javascript" src="js/easing.js"></script>
+<!-- start-smoth-scrolling -->
+<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Cinzel:400,700,900' rel='stylesheet' type='text/css'>	
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+	$(document).ready(function()
+{
+$("#notificationLink").click(function()
+{
+$("#notificationContainer").fadeToggle(300);
+$("#notification_count").fadeOut("slow");
+return false;
+});
+
+//Document Click
+$(document).click(function()
+{
+$("#notificationContainer").hide();
+});
+//Popup Click
+$("#notificationContainer").click(function()
+{
+return false
+});
+
+});
+</script>
+<!-- start-smoth-scrolling -->
+<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Cinzel:400,700,900' rel='stylesheet' type='text/css'>
+<style>
+#notification_li{position:relative}
+#notificationContainer {
+background-color: #fff;
+border: 1px solid rgba(100, 100, 100, .4);
+-webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, .25);
+overflow: visible;
+position: absolute;
+top: 30px;
+margin-left: -170px;
+width: 400px;
+z-index: 1;
+display: none;
+}
+#notificationContainer:before {
+content: '';
+display: block;
+position: absolute;
+width: 0;
+height: 0;
+color: transparent;
+border: 10px solid black;
+border-color: transparent transparent white;
+margin-top: -20px;
+margin-left: 188px;
+}
+#notificationTitle {
+z-index: 1000;
+font-weight: bold;
+padding: 8px;
+font-size: 13px;
+background-color: #ffffff;
+width: 384px;
+border-bottom: 1px solid #dddddd;
+}
+#notificationsBody {
+padding: 33px 0px 0px 0px !important;
+min-height:300px;
+}
+#notificationFooter {
+background-color: #e9eaed;
+text-align: center;
+font-weight: bold;
+padding: 8px;
+font-size: 12px;
+border-top: 1px solid #dddddd;
+}
+#notification_count {
+padding: 3px 7px 3px 7px;
+background: #cc0000;
+color: #ffffff;
+font-weight: bold;
+margin-left: 85%;
+border-radius: 9px;
+position: absolute;
+margin-top: -11px;
+font-size: 11px;
+}
+</style>
+</head>
+<body >
+<!-- header -->
+	<div class="header">
+		<div class="container">
+			<nav class="navbar navbar-default">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+				  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				  </button>
+					<div class="logo">
+						<a class="navbar-brand" href="/">SANA</a>
+					</div>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+					<nav class="cl-effect-5" id="cl-effect-5">
+						<ul class="nav navbar-nav">
+							<li><a href="/login" ng-click="home()" class="active">Home</a></li>
+							<li><a href="/about" ><span data-hover="About Us">About Us</span></a></li>
+							<li><a href="/mail" ><span data-hover="Mail Us">Mail Us</span></a></li>
+						</ul>
+					</nav>
+				</div>
+				<!-- /.navbar-collapse -->
+			</nav>
+		</div>
+	</div>
+
+<!-- header --><!-- header -->
+<!-- banner-bottom -->
+<!-- //banner-bottom -->
+<!-- history -->
+	<div class="history">
+		<div class="container">
+			<div class="history-grids">
+				<div class="col-md-6 history-grid-left">
+					<h3>History</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae eros eget tellus 
+						tristique bibendum. Donec rutrum sed sem quis venenatis.</p>
+					<img src="images/6.jpg" alt=" " class="img-responsive" />
+				</div>
+				<div class="col-md-6 history-grid-right">
+					<h3>Testimonials</h3>
+					<div class="history-grid-right-grids">
+						<div class="about-bottom-grid-right-grid">
+							<div class="about-bottom-grid-right-grdl">
+								<img src="images/10.jpg" alt=" " class="img-responsive" />
+							</div>
+							<div class="about-bottom-grid-right-grdr">
+								<p><span>N</span>eque porro quisquam est, 
+									qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, 
+									sed quia non numquam eius modi.</p>
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+						<div class="about-bottom-grid-right-grid">
+							<div class="about-bottom-grid-right-grdl">
+								<img src="images/11.jpg" alt=" " class="img-responsive" />
+							</div>
+							<div class="about-bottom-grid-right-grdr">
+								<p><span>R</span>eque porro quisquam est, 
+									qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, 
+									sed quia non numquam eius modi.</p>
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+						<div class="about-bottom-grid-right-grid">
+							<div class="about-bottom-grid-right-grdl">
+								<img src="images/12.jpg" alt=" " class="img-responsive" />
+							</div>
+							<div class="about-bottom-grid-right-grdr">
+								<p><span>S</span>eque porro quisquam est, 
+									qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, 
+									sed quia non numquam eius modi.</p>
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+					</div>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+	</div>
+<!-- //history -->
+<!-- footer -->
+<!-- footer -->
+  <div class="footer" style="margin-top:12%;">
+    <div class="container">
+      
+      <div class="">
+      <center>
+ <p>&copy 2016 sana. All rights reserved <!-- | Design by <a href="http://w3layouts.com">W3layouts -->.</a></p> 
+ </center>
+        
+      </div>
+    </div>
+  </div>
+<!-- //footer -->
+<!-- here stars scrolling icon -->
+ 
+	  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script type="text/javascript">
+
+$(document).ready(function(){
+	$(".date-picker").datepicker({ dateFormat: 'yy-mm-dd' });
+});
+	</script>
+	<script src="js/bootstrap.js"></script>
+
+</body>
+</html>

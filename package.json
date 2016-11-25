@@ -1,0 +1,24 @@
+{
+  "name": "sana",
+  "version": "1.0.0",
+  "description": "this is sana protocol builder project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^2.1.2",
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "express-session": "^1.14.1",
+    "hashmap": "^2.0.6",
+    "mysql": "^2.11.1",
+    "nodemailer": "^2.6.4",
+    "request": "^2.75.0"
+  },
+  "engines": {
+    "node": "4.1.1"
+  }
+}

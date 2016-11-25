@@ -1,0 +1,374 @@
+
+<!DOCTYPE html>
+<html ng-app="sanaApp">
+<head>
+<title>Sana Protocol Builder</title>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="/js/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<script src="/js/angular.min.js"></script>
+	<script src="/js/angular-resource.js"></script>
+	<script src="/js/viewPatient.js"></script>
+
+
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Clinico Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-mobile-apps -->
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/mystyle.css" rel="stylesheet" type="text/css" media="all" />
+<link rel="stylesheet" href="css/animate.css">
+<!-- <link rel="stylesheet" href="css/style.css"> -->
+<!-- js -->
+<script src="js/jquery-1.11.1.min.js"></script>
+<!-- //js -->
+<!-- start-smoth-scrolling -->
+<script type="text/javascript" src="js/move-top.js"></script>
+<script type="text/javascript" src="js/easing.js"></script>
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+	$(document).ready(function()
+{
+$("#notificationLink").click(function()
+{
+$("#notificationContainer").fadeToggle(300);
+$("#notification_count").fadeOut("slow");
+return false;
+});
+
+//Document Click
+$(document).click(function()
+{
+$("#notificationContainer").hide();
+});
+//Popup Click
+$("#notificationContainer").click(function()
+{
+return false
+});
+
+});
+</script>
+<!-- start-smoth-scrolling -->
+<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Cinzel:400,700,900' rel='stylesheet' type='text/css'>
+
+<style>
+#notification_li{position:relative}
+#notificationContainer {
+background-color: #fff;
+border: 1px solid rgba(100, 100, 100, .4);
+-webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, .25);
+overflow: visible;
+position: absolute;
+top: 30px;
+margin-left: -170px;
+width: 400px;
+z-index: 1;
+display: none;
+}
+#notificationContainer:before {
+content: '';
+display: block;
+position: absolute;
+width: 0;
+height: 0;
+color: transparent;
+border: 10px solid black;
+border-color: transparent transparent white;
+margin-top: -20px;
+margin-left: 188px;
+}
+#notificationTitle {
+z-index: 1000;
+font-weight: bold;
+padding: 8px;
+font-size: 13px;
+background-color: #ffffff;
+width: 384px;
+border-bottom: 1px solid #dddddd;
+}
+#notificationsBody {
+padding: 33px 0px 0px 0px !important;
+min-height:300px;
+}
+#notificationFooter {
+background-color: #e9eaed;
+text-align: center;
+font-weight: bold;
+padding: 8px;
+font-size: 12px;
+border-top: 1px solid #dddddd;
+}
+#notification_count {
+padding: 3px 7px 3px 7px;
+background: #cc0000;
+color: #ffffff;
+font-weight: bold;
+margin-left: 85%;
+border-radius: 9px;
+position: absolute;
+margin-top: -11px;
+font-size: 11px;
+}
+</style>
+</style>
+</head>
+	
+<body ng-controller="loginCtrl">
+<!-- header -->
+	<div class="header">
+		<div class="container">
+			<nav class="navbar navbar-default">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+				  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				  </button>
+					<div class="logo">
+						<a class="navbar-brand" href="index.html">Clinico</a>
+					</div>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+					<nav class="cl-effect-5" id="cl-effect-5">
+						<ul class="nav navbar-nav">
+							<li><a href="index2.html" class="active">Home</a></li>
+							<li><a href="addpatient.html"><span data-hover="Add Patient">Add Patient</span></a></li>
+							<li><a href="index2.html"><span data-hover="View Patient">View Patient</span></a></li>
+
+							<li id="notification_li">
+								<span id="notification_count">3</span>
+								<a href="#" id="notificationLink">Pending Patients</a>
+								<div id="notificationContainer">
+								<div id="notificationTitle">Pending Patients</div>
+								<div id="notificationsBody" class="notifications">
+								</div>
+								<div id="notificationFooter"  class="linkfix_LogIn"><a href="pendingpatients.html">See all</a></div>
+								<script type="text/javascript">
+									 $('.linkfix_LogIn a').on('click',function() {           
+										        window.location.href = "pendingpatients.html";  // Change This
+										});
+								</script>
+								</div>
+							</li>
+							
+							<li><a href="index.html"><span data-hover="Logout">Logout</span></a></li>
+						</ul>
+					</nav>
+				</div>
+				<!-- /.navbar-collapse -->
+			</nav>
+		</div>
+	</div>
+	
+<!-- container -->
+	<div class="container"  ng-controller="QuestionCtrl" style="margin-top:5%;margin-bottom:5%;">
+		<div class="panel-body">
+              <div class="row">
+                <div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="http://babyinfoforyou.com/wp-content/uploads/2014/10/avatar-300x300.png" class="img-circle img-responsive"> </div>
+                
+                <!--<div class="col-xs-10 col-sm-10 hidden-md hidden-lg"> <br>
+                  <dl>
+                    <dt>DEPARTMENT:</dt>
+                    <dd>Administrator</dd>
+                    <dt>HIRE DATE</dt>
+                    <dd>11/12/2013</dd>
+                    <dt>DATE OF BIRTH</dt>
+                       <dd>11/12/2013</dd>
+                    <dt>GENDER</dt>
+                    <dd>Male</dd>
+                  </dl>
+                </div>-->
+                <div class=" col-md-9 col-lg-9 "> 
+                  <table class="table table-user-information">
+                    <tbody>
+                    <tr>
+                        <td>Pending</td>
+                        <td>
+                        	<input type="radio" id="ppend" name="ppend" >Yes
+                        	<input type="radio" id="ppend" name="ppend" >No
+
+                        </td>
+                    </tr>
+                    </tbody>
+                  </table>
+                  
+                </div>
+              </div>
+            </div>
+          
+	</div>
+	<div id="container" style="margin-left:2%;margin-right:2%;">
+		  <div class="row come-in">
+		    <h1 class="text-center">Diseases Details</h1><br/>
+		    
+		    <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+		      <div class="panel panel-primary">
+		        <div class="panel-heading">Symptoms</div>
+		        <div class="panel-body">
+		          <p>"Sir," said Mr. Fogg to the captain, "three passengers have disappeared."</p>
+
+		          <p>"Dead?" asked the captain.</p>
+
+		          <p>"Dead or prisoners; that is the uncertainty which must be solved.  Do you propose to pursue the Sioux?"</p>
+
+		          <p>"That's a serious thing to do, sir," returned the captain.  "These Indians may retreat beyond the Arkansas, and I cannot leave the fort unprotected."</p>
+
+		          <p>"The lives of three men are in question, sir," said Phileas Fogg.</p>
+		        </div>
+		      </div>
+		       <div class="panel panel-default fadeInDown" style="border-color:#d9534f;">
+		        <div class="panel-heading" style="background-color:#d9534f;color:#fff;">Disease Diagnose</div>
+		        <div class="panel-body">
+		          <p>"Doubtless; but can I risk the lives of fifty men to save three?"</p>
+
+		          <p>"I don't know whether you can, sir; but you ought to do so."</p>
+
+		          <p>"Nobody here," returned the other, "has a right to teach me my duty."</p>
+
+		          <p>"Very well," said Mr. Fogg, coldly.  "I will go alone."</p>
+
+		          <p>"You, sir!" cried Fix, coming up; "you go alone in pursuit of the Indians?"</p>
+		        </div>
+		      </div> 
+		    </div>
+		    
+		    <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+		      <div class="panel panel-info">
+		        <div class="panel-heading">Questionnaire</div>
+		        <div class="panel-body">
+					<div class="container table-responsive">
+						<table border="1" class="table table-hover" width="100%">
+					    <tbody>		
+							<tr ng-repeat="element in details">
+								<td>{{element.id}}</td>
+								<td>{{element.value}}</td>															
+							</tr>
+							<tr>
+								<button ng-click="editProfile()">Edit Profile</button>
+							</tr>
+						</tbody>
+						</table>
+					</div>
+		        </div>
+		      </div>      
+		      
+		  
+		    </div>
+		  </div>
+	</div>
+<!-- /container -->
+<!-- footer -->
+	<div class="footer">
+		<div class="container">
+			<h3>Sign up for our newsletter</h3>
+			<p class="para">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae eros eget tellus 
+				tristique bibendum. Donec rutrum sed sem quis venenatis.</p>
+			<div class="footer-contact">
+				<form>
+					<input type="text" placeholder="Enter your email to update" required=" ">
+					<input type="submit" value="">
+				</form>
+			</div>
+			<div class="footer-grids">
+				<div class="col-md-3 footer-grid">
+					<p>HALOVIETNAM LTD
+						66, Dang Van ngu, Dong Da
+						Hanoi, Vietnam.
+					<a href="mailto:info@example.com">contact@example.com</a>
+					<p>Phone : +844 35149182</p>
+				</div>
+				<div class="col-md-3 footer-grid">
+					<ul>
+						<li><a href="mail.html">Contact</a></li>
+						<li><a href="about.html">About</a></li>
+						<li><a href="short-codes.html">Short Codes</a></li>
+						<li><a href="index.html">Home</a></li>
+					</ul>
+				</div>
+				<div class="col-md-3 footer-grid">
+					<ul>
+						<li><a href="privacy.html">Privacy Policy</a></li>
+						<li><a href="privacy.html">Terms & Conditions</a></li>
+						<li><a href="support.html">Support</a></li>
+					</ul>
+				</div>
+				<div class="col-md-3 footer-grid">
+					<div class="footer-grid-left">
+						<a href="single.html"><img src="images/4.jpg" alt=" " class="img-responsve" /></a>
+					</div>
+					<div class="footer-grid-left">
+						<a href="single.html"><img src="images/5.jpg" alt=" " class="img-responsve" /></a>
+					</div>
+					<div class="footer-grid-left">
+						<a href="single.html"><img src="images/6.jpg" alt=" " class="img-responsve" /></a>
+					</div>
+					<div class="footer-grid-left">
+						<a href="single.html"><img src="images/7.jpg" alt=" " class="img-responsve" /></a>
+					</div>
+					<div class="footer-grid-left">
+						<a href="single.html"><img src="images/8.jpg" alt=" " class="img-responsve" /></a>
+					</div>
+					<div class="footer-grid-left">
+						<a href="single.html"><img src="images/9.jpg" alt=" " class="img-responsve" /></a>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+			<div class="footer-copy">
+				<!-- <p>&copy 2016 Clinico. All rights reserved | Design by <a href="http://w3layouts.com">W3layouts.</a></p> -->
+				<ul>
+					<li><a href="#" class="twitter"><span type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Follow Us On Twitter"></span></a></li>
+					<li><a href="#" class="p"><span type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Follow Us On Pinterest"></span></a></li>
+					<li><a href="#" class="facebook" id="facebook"><span type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Follow Us On Facebook"></span></a></li>
+					<li><a href="#" class="dribble"><span type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Follow Us On Dribbble"></span></a></li>
+					<li><a href="#" class="rss"><span type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Follow Us On RSS"></span></a></li>
+					<div class="clearfix"> </div>
+				</ul>
+				<script>
+					$(function () {
+					  $('[data-toggle="tooltip"]').tooltip()
+					})
+				</script>
+			</div>
+		</div>
+	</div>
+<!-- //footer -->
+<!-- here stars scrolling icon -->
+	<script type="text/javascript">
+									$(document).ready(function() {
+										/*
+										var defaults = {
+								  			containerID: 'toTop', // fading element id
+											containerHoverID: 'toTopHover', // fading element hover id
+											scrollSpeed: 1200,
+											easingType: 'linear' 
+								 		};
+										*/
+										
+										$().UItoTop({ easingType: 'easeOutQuart' });
+										
+									});
+	</script>
+<!-- //here ends scrolling icon -->
+<!-- for bootstrap working -->
+	<script src="js/bootstrap.js"></script>
+<!-- //for bootstrap working -->
+</body>
+</html>
